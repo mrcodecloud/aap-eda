@@ -1,6 +1,6 @@
 ---
 - name: EDA | Webhook | Listen for events on a webhook
-  hosts: localhost
+  hosts: all
 
  ## Define our source for events
 
