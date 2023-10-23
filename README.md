@@ -6,3 +6,7 @@ curl -H 'Content-Type: application/json' -d "{\"message\": \"Ansible is good\"}"
 
 curl -H 'Content-Type: application/json' -d "{\"message\": \"Ansible is good\"}" 192.168.100.213:5000/endpoint
 http://192.168.100.213:6000/endpoint
+
+
+#Installing IdM Server 
+ipa-server-install -n idm.it22.local -r IDM.IT22.LOCAL -a i4info-t4tech@22 -p i4info-t4tech@22 --mkhomedir --no-ntp --auto-reverse --setup-dns --no-forwarders --unattended

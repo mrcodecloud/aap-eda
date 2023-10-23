@@ -1,0 +1,20 @@
+---
+- name: Playbook to handle users
+  hosts: ipaserver
+
+  # vars_files:
+  # - /home/user_name/MyPlaybooks/secret.yml
+  tasks:
+  - name: Create user idm_user
+    ipauser:
+      ipaadmin_password: "{{ ipaadmin_password }}"
+      name: "{{ user_name }}"
+      first: "{{ display_name }}"
+      last: "{{ display_name }}"
+      # uid: 1000111
+      # gid: 10011
+      # phone: "+555123457"
+      # email: idm_user@acme.com
+      # passwordexpiration: "2023-01-19 23:59:59"
+      password: "Password123"
+      update_password: on_create

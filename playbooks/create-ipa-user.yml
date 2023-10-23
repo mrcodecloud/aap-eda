@@ -1,0 +1,24 @@
+---
+- name: Playbook to handle users
+  hosts: ipaserver
+  tasks:
+  - name: Ensure pinky is present and always reset password
+    community.general.ipa_user:
+      name: pinky
+      state: present
+      krbpasswordexpiration: 20250119235959
+      givenname: Pinky
+      sn: Acme
+      mail:
+      - pinky@acme.com
+      telephonenumber:
+      - '+555123456'
+      sshpubkey:
+      - ssh-rsa ....
+      - ssh-dsa ....
+      uidnumber: '1001'
+      gidnumber: '100'
+      homedirectory: /home/pinky
+      ipa_host: server.idm.it22.local
+      ipa_user: admin
+      ipa_pass: i4info-t4tech@22
