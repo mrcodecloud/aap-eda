@@ -4,4 +4,5 @@
   tasks:
     - name: Debug message
       ansible.builtin.debug:
-        msg: "{{ greeting }}"
+        # msg: "{{ greeting }}"
+        msg: "{{ ansible_eda.event.payload.message }}"
