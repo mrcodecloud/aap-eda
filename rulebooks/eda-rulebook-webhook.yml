@@ -15,9 +15,10 @@
         - run_job_template:
             name: "aap-eda-greetings"
             organization: Default
-            job_args:
-              extra_vars:
-                greeting: "{{ event.payload.message }}"
+            # job_args:
+            #   extra_vars:
+            vars:
+              greeting: "{{ event.payload.message }}"
         - set_fact:
             fact:
               webhookgreeting: "{{ event.payload.message }}"
