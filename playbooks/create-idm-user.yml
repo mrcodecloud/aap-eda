@@ -1,5 +1,5 @@
 - name: Playbook to handle users
-  hosts: localhost
+  hosts: ipaserver
 
   tasks:
   - name: Create user idm_user
