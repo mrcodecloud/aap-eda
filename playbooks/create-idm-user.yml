@@ -1,8 +1,8 @@
 - name: Playbook to handle users
   hosts: all
   vars: 
-    username: "{{ ansible_eda.event.payload..result.Account_Name[1] }}"
-    fullname: "{{ ansible_eda.event.payload..result.Display_Name }}"
+    username: "{{ ansible_eda.event.payload.result.Account_Name[1] }}"
+    fullname: "{{ ansible_eda.event.payload.result.Display_Name }}"
   tasks:
   # - name: Debug message
   #     ansible.builtin.debug:
