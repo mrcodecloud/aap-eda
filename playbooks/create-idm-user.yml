@@ -5,9 +5,9 @@
   - name: Create user idm_user
     ipauser:
       ipaadmin_password: i4info-t4tech@22
-      name: "{{ user_name }}"
-      first: "{{ display_name }}"
-      last: "{{ display_name }}"
+      name: "{{ ansible_eda.event.payload.result.Account_Name[1] }}"
+      first: "{{ ansible_eda.event.payload.result.Display_Name }}"
+      last: "{{ ansible_eda.event.payload..result.Display_Name }}"
       state: present
 
   - name: Disable the above user
