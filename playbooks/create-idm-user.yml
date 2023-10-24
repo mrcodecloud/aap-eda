@@ -8,5 +8,11 @@
       name: "{{ user_name }}"
       first: "{{ display_name }}"
       last: "{{ display_name }}"
+      state: present
+
+  - name: Disable the above user
+    ipauser:
+      ipaadmin_password: i4info-t4tech@22
+      name: "{{ user_name }}"
       state: disabled
 
