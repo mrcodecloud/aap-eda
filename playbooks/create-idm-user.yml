@@ -5,8 +5,8 @@
   - name: Create user idm_user
     ipauser:
       ipaadmin_password: i4info-t4tech@22
-      name: idm_user1
-      first: Alice1
-      last: Acme1
-      uid: 1000111
-      gid: 10011
+      name: "{{ user_name }}"
+      first: "{{ display_name }}"
+      last: "{{ display_name }}"
+      state: disabled
+

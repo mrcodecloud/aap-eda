@@ -1,6 +1,6 @@
 ---
 - name: Playbook to handle users
-  hosts: ipaserver
+  hosts: all
   tasks:
   - name: Ensure pinky is present and always reset password
     community.general.ipa_user:

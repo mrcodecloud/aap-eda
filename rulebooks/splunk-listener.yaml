@@ -13,7 +13,7 @@
         - debug:
 
         - run_job_template:
-            name: "create-ipa-user"
+            name: "create-idm-user"
             organization: Default
             job_args:
               extra_vars:
