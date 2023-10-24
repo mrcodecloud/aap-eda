@@ -1,18 +1,24 @@
 - name: Playbook to handle users
   hosts: all
-
+  vars: 
+    username: "{{ ansible_eda.event.payload..result.Account_Name[1] }}"
+    fullname: "{{ ansible_eda.event.payload..result.Display_Name }}"
   tasks:
+  - name: Debug message
+      ansible.builtin.debug:
+        # msg: "{{ greeting }}"
+        msg: "{{ ansible_eda.event.payload..result.Account_Name[1] }}"
   - name: Create user idm_user
     ipauser:
       ipaadmin_password: i4info-t4tech@22
-      name: "{{ ansible_eda.event.payload.result.Account_Name[1] }}"
-      first: "{{ ansible_eda.event.payload.result.Display_Name }}"
-      last: "{{ ansible_eda.event.payload..result.Display_Name }}"
+      name: "{{ username }}"
+      first: "{{ fullname }}"
+      last: "{{ fullname }}"
       state: present
 
   - name: Disable the above user
     ipauser:
       ipaadmin_password: i4info-t4tech@22
-      name: "{{ user_name }}"
+      name: "{{ username }}"
       state: disabled
 
