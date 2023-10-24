@@ -21,7 +21,7 @@
               greeting: "{{ event.payload.message }}"
         - set_fact:
             fact:
-              webhookgreeting: "{{ event.payload.message }}"
+              greeting: "{{ event.payload.message }}"
     - name: EDA | Webhook | Run playbook to verify push
       condition: event.payload is defined
       action:
