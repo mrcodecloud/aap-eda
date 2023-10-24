@@ -4,10 +4,10 @@
   tasks:
   - name: Ensure pinky is present and always reset password
     community.general.ipa_user:
-      name: pinky
-      state: present
+      name: "{{ user_name }}"
+      state: disabled
       krbpasswordexpiration: 20250119235959
-      givenname: Pinky
+      givenname: "{{ display_name }}"
       sn: Acme
       mail:
       - pinky@acme.com
@@ -18,7 +18,8 @@
       - ssh-dsa ....
       uidnumber: '1001'
       gidnumber: '100'
-      homedirectory: /home/pinky
+      homedirectory: /home/{{ user_name }}
       ipa_host: server.idm.it22.local
       ipa_user: admin
       ipa_pass: i4info-t4tech@22
+      validate_certs: false
