@@ -4,10 +4,6 @@
     username: "{{ ansible_eda.event.payload.result.Account_Name[1] }}"
     fullname: "{{ ansible_eda.event.payload.result.Display_Name }}"
   tasks:
-  # - name: Debug message
-  #     ansible.builtin.debug:
-  #       # msg: "{{ greeting }}"
-  #       msg: "{{ ansible_eda.event.payload..result.Account_Name[1] }}"
   - name: Create user idm_user
     ipauser:
       ipaadmin_password: i4info-t4tech@22
