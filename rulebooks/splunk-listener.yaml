@@ -7,7 +7,7 @@
         port: 6000
 
   rules:
-    - name: R1 - Debug all
+    - name: Splunk Event Handler Rulebook
       condition: event.meta is defined
       actions:
         - debug:
@@ -15,7 +15,4 @@
         - run_job_template:
             name: "create-idm-user"
             organization: Default
-            # job_args:
-            #   extra_vars:
-            #     user_name: "{{ event.payload.result.Account_Name[1] }}"
-            #     display_name: "{{ event.payload.result.Display_Name }}"
+            
