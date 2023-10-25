@@ -1,6 +1,7 @@
 ---
 - name: EDA | Webhook |Greeting playbook for webhook events
-  hosts: localhost
+  hosts: all
+  gather_facts: no
   tasks:
     - name: Debug message
       ansible.builtin.debug:
