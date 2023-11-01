@@ -6,7 +6,7 @@
   tasks:
   - name: Create user idm_user
     ipauser:
-      ipaadmin_password: i4info-t4tech@22
+      ipaadmin_password: pisforpassword
       name: "{{ username }}"
       first: "{{ fullname }}"
       last: "{{ fullname }}"
@@ -14,7 +14,7 @@
 
   - name: Disable the above user
     ipauser:
-      ipaadmin_password: i4info-t4tech@22
+      ipaadmin_password: pisforpassword
       name: "{{ username }}"
       state: disabled
 
